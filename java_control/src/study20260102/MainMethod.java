@@ -1,5 +1,7 @@
 package study20260102;
 
+import java.util.Scanner;
+
 public class MainMethod {
 
 	public static void main(String[] args) {
@@ -36,6 +38,21 @@ public class MainMethod {
 		// 예) 3시간 59분 (230분) -> 3000원
 		//     4시간 12분 (252분) -> 2600원
 		// 문제 : 시간(분)을 입력받아 값을 출력
+		
+		Scanner kbd = new Scanner(System.in);
+		System.out.print("시간 입력 : ");
+		int minutes = kbd.nextInt();
+		
+		int basictime = 30;
+		int money;
+		
+		if(minutes >= 240) {
+			money = 2500;
+		} else {
+			money = 1000;
+		}
+		System.out.println("주차 요금 : "+money);
+		
 		
 	}
 
