@@ -46,11 +46,12 @@ public class MainMethod {
 		
 		if(minutes <= 30) {
 			totalMoney = 1000;
-		} else if (minutes >=240){
-			totalMoney = 2500;
+		} else if (minutes < 240) {
+			int extraMinutes = minutes - 30; // 4시간전 추가요금
+			totalMoney = 1000 + (extraMinutes / 10) * 100;
 		} else {
-			int money = ((minutes - 30) / 10 * 100); // 10분당 100원씩 추가
-			totalMoney = 1000 + money;
+			int extraMinutes = minutes - 240; // 4시간 이후 추가요금
+			totalMoney = 2500 + (extraMinutes / 10) * 100;
 		}
 		System.out.println("주차 요금 : "+totalMoney);
 		
