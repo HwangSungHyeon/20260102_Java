@@ -54,6 +54,7 @@ public class MainMethod {
 			totalMoney = 2500 + (extraMinutes / 10) * 100;
 		}
 		System.out.println("주차 요금 : "+totalMoney);
+		
 	}
 
 }
