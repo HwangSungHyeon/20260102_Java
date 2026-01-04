@@ -40,18 +40,19 @@ public class MainMethod {
 		// 문제 : 시간(분)을 입력받아 값을 출력
 		
 		Scanner kbd = new Scanner(System.in);
-		System.out.print("시간 입력 : ");
+		System.out.print("시간(분) 입력 : ");
 		int minutes = kbd.nextInt();
+		int totalMoney = 0; // 총 요금
 		
-		int basictime = 30;
-		int money;
-		
-		if(minutes >= 240) {
-			money = 2500;
+		if(minutes <= 30) {
+			totalMoney = 1000;
+		} else if (minutes >=240){
+			totalMoney = 2500;
 		} else {
-			money = 1000;
+			int money = ((minutes - 30) / 10 * 100); // 10분당 100원씩 추가
+			totalMoney = 1000 + money;
 		}
-		System.out.println("주차 요금 : "+money);
+		System.out.println("주차 요금 : "+totalMoney);
 		
 		
 	}
