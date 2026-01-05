@@ -141,30 +141,34 @@ public class LoopMain {
 		// 게임을 진행하면서 1판 끝날때 마다
 		// 몇승, 몇패, 몇무 출력하기.
 		
-//		int win = 0;
-//		int lose = 0;
-//		int draw = 0;
-//		
-//		for (int i = 1; i <= 15; i++) {
-//			int com = (int)Math.floor(Math.random() * 3) + 1;
-//			System.out.println("가위바위보");
-//			System.out.print("1-가위, 2-바위, 3-보 \n입력 : ");
-//			int user = scan.nextInt();
-//			
-//			System.out.println("컴퓨터 : "+com+" 나 : "+user);
-//			
-//			if(user == com) {// 비김
-//				System.out.println("비김");
-//				draw++;
-//			} else if( (user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2)) {
-//				System.out.println("나의 승리");
-//				win++;
-//			} else {
-//				System.out.println("나의 패배");
-//				lose++;
-//			}
-//			System.out.println(win+"승" + lose+"패" + draw+"무");
-//		}
+		int win = 0;
+		int lose = 0;
+		int draw = 0;
+		
+		for (int i = 1; i <= 15; i++) {
+			int com = (int)Math.floor(Math.random() * 3) + 1;
+			System.out.println("가위바위보");
+			System.out.print("1-가위, 2-바위, 3-보 \n입력 : ");
+			int user = scan.nextInt();
+			
+			System.out.println("컴퓨터 : "+com+" 나 : "+user);
+		
+			int res = user - com;
+			if(res == 0) {
+				System.out.println("비김");
+				draw++;
+			} else if(res == -2 || res == 1) {
+				System.out.println("나의 승리");
+				win++;
+			} else {
+				System.out.println("나의 패배");
+				lose++;
+			}
+			System.out.println(win+"승" + lose+"패" + draw+"무");
+		}
+		
+		
+		
 		
 //		ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 		
