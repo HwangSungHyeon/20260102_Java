@@ -77,11 +77,6 @@ public class MainMethod {
 		// 주차 요금 계산
 		int price = cost + pTime * 100;
 		System.out.println("주차 요금 : "+ price +"원");
-		
-		
-		
-		
-		
 	}
 
 }
