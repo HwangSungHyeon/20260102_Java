@@ -88,13 +88,6 @@ public class MainMethod {
 		
 		System.out.println("컴퓨터 : "+com+" 나 : "+user);
 		
-		int res = user - com;
-		if(res == 0)
-			System.out.println("비김");
-		else if(res == -2 || res == 1)
-			System.out.println("나의 승리");
-		else
-			System.out.println("나의 패배");
 		
 //		if(user == com) // 비김
 //			System.out.println("비김");
@@ -103,6 +96,13 @@ public class MainMethod {
 //		} else
 //			System.out.println("나의 패배");
 		
+		int res = user - com;
+		if(res == 0)
+			System.out.println("비김");
+		else if(res == -2 || res == 1)
+			System.out.println("나의 승리");
+		else
+			System.out.println("나의 패배");
 		
 		
 	}
