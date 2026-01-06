@@ -101,9 +101,9 @@ public class ArrayMain {
 //			System.out.println( arr[i] ); 
 //		}
 //		
-//		for(int num : arr) {  // 향상된 for 문. 위에 설정한 배열의 데이터타입은 int 이므로 같은타입으로 변수를 만들어주고 :(클론) arr(배열의 이름)을 쓴다.
+//		for(int num : arr) {  // 향상된 for 문. 위에 설정한 배열의 데이터타입은 int 이므로 같은타입으로 새로운 변수를 만들어주고 :(클론) arr(배열의 이름)을 쓴다.
 //			if(num > 50)
-//			System.out.println( num ); // 출력은 num(변수의 이름).
+//			System.out.println( num ); // 출력은 num(새로운 변수의 이름).
 //		}
 //		
 //		
