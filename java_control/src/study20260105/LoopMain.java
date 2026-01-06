@@ -141,9 +141,7 @@ public class LoopMain {
 		// 게임을 진행하면서 1판 끝날때 마다
 		// 몇승, 몇패, 몇무 출력하기.
 		
-		int win = 0;
-		int lose = 0;
-		int draw = 0;
+		int winCount = 0, loseCount = 0, drawCount = 0;
 		
 		for (int i = 1; i <= 15; i++) {
 			int com = (int)Math.floor(Math.random() * 3) + 1;
@@ -156,15 +154,15 @@ public class LoopMain {
 			int res = user - com;
 			if(res == 0) {
 				System.out.println("비김");
-				draw++;
+				drawCount++;
 			} else if(res == -2 || res == 1) {
 				System.out.println("나의 승리");
-				win++;
+				winCount++;
 			} else {
 				System.out.println("나의 패배");
-				lose++;
+				loseCount++;
 			}
-			System.out.println(win+"승" + lose+"패" + draw+"무");
+			System.out.println(winCount+"승" + loseCount+"패" + drawCount+"무");
 		}
 		
 		
