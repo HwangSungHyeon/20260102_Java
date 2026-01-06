@@ -8,6 +8,8 @@ public class LoopMain2 {
 
 	public static void main(String[] args) {
 		
+		// 1~50까지 숫자 하나를 제시하고 컴퓨터가 그 숫자를 맞출수 있도록 내가 범위를 점점 줄여가며
+		// 컴퓨터가 맞출수 있도록 내가 랜덤 범위를 계속 줄일수있는 코딩
 		
 //		System.out.print("1~50 중 입력 :");
 //		int user = scan.nextInt();
