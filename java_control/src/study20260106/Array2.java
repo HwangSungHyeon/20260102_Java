@@ -22,9 +22,9 @@ public class Array2 {
 		
 		for(int i = 0; i < 5; i++) {
 			for(int k = 0; k < 5; k++) {
-				System.out.println( bingo[i*5+k] );
+				System.out.printf(" %d ", bingo[i*5+k] );
 			}
-				
+			System.out.println();
 		}
 		
 		
