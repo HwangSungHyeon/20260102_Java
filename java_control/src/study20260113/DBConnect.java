@@ -38,19 +38,34 @@ public class DBConnect {
 		
 		Product[] products = new Product[6];
 		// 쿼리문 작성하기
-		String sql = "select * from product";
+		String sql = "select * from product"; // product 테이블 모든 데이터 조회
 		
-		// 쿼리문 보내기
 		try {
-			st = conn.createStatement();
+			// 쿼리문 보내기
+			st = conn.createStatement(); // Statement 생성
+			// 결과 받기
+			rs = st.executeQuery(sql); // 쿼리문 보내고 받은 결과를 ResultSet에 저장
+			
 		}catch(Exception e) {
 			System.out.println( "쿼리문 실패" );
 		}
 		
-		// 결과 받기
-		
-		
 		// 데이터들을 product 객체에 저장하기
+		try {
+			int i =0;
+			while(rs.next()) { // rs.next() 다음줄에 데이터가 있으면 true.
+				
+				Product temp = new Product(
+						rs.getString("item_name"), rs.getInt("price"),
+						rs.getInt("stock"), rs.getString("description")
+						);
+				products[i] = temp;
+				i++;
+			}
+			
+		}catch(Exception e) {
+			System.out.println("객체생성 실패");
+		}
 		
 		return products;
 	}
