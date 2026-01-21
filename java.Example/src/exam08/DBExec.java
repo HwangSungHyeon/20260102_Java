@@ -122,6 +122,18 @@ public class DBExec {
      중간에 끼워놓기 좋은 프로그램.
      ex12) Friend
            SimpleLinkedList
+           
+     * 예외처리
+     - 갑작스러운 오류에도 프로그램이 죽지 않고 우아하게 대처.
+     try {
+       ~~~
+       ~~~
+     } catch (Exception e) {
+     
+     } finally {
+     
+     }
+     
    
    
    
