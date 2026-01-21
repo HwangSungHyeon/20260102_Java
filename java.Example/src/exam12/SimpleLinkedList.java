@@ -20,10 +20,10 @@ public class SimpleLinkedList {
 		System.out.println("---------------------");
 		// 철수 -> 영희 -> 민수
 		
-		Friend newNobe = new Friend("짱구");
+		Friend newNode = new Friend("짱구");
 		
-		newNobe.next = f1.next;
-		f1.next = newNobe;
+		newNode.next = f1.next;
+		f1.next = newNode;
 		
 		current = f1;
 		while (current != null) {
