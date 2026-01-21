@@ -117,6 +117,11 @@ public class DBExec {
      - 상속
      - 다형성
      - 캡슐화
+     
+     Node
+     중간에 끼워놓기 좋은 프로그램.
+     ex12) Friend
+           SimpleLinkedList
    
    
    
