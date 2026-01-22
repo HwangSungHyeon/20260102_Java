@@ -61,5 +61,26 @@ public class MyLinkedList {
 		size++;
 	}
 	
+	public Object remove(int index) {
+		if(index == 0) {
+			Object data = head.data;
+			head = head.next;
+			size--;
+			return data;
+		}
+		
+		Node prev = head;
+		for(int i = 0; i < index-1; i++) {
+			prev = prev.next;
+		}
+		Node toDelete = prev.next;
+		prev.next = toDelete.next;
+		Object returnData = toDelete.data;
+		toDelete = null;
+		size--;
+		return returnData;
+				
+	}
+	
 	
 }
