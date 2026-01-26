@@ -1,6 +1,7 @@
 package exam30;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -13,19 +14,34 @@ public class _Exec {
 		while(true) {
 			System.out.print("선택(1:목록, 2:상세보기, 3:등록, 4:수정, 5:삭제):");
 			String menu = sc.nextLine();
+			StudentDAO dao = new StudentDAO();
+			StudentDTO dto = new StudentDTO();
+			int result = 0;
+			
 			switch(menu) {
 			case "1":
-				System.out.println("-목록-");
+				List<StudentDTO> list = dao.getSelectAll();
+				System.out.println("학번\t이름\t주민번호\t연락처\t주소\t등록일");
+				System.out.println("--------------------------------------------");
+				for(int i = 0; i < list.size(); i++) {
+					list.get(i).display();
+				}
 				break;
 			case "2":
-				System.out.println("-상세보기-");
+				dto.inputField("view");
+				StudentDTO resultDTO = dao.getSelectOne(dto);
+				resultDTO.display();
 				break;
 			case "3":
-//				StudentDTO dto = new StudentDTO();
-				String name = "이성순";
-				String ssn = "123456-1234567";
-				String phone = "010-1111-1111";
-				String address = "서울";
+				dto.inputField("chuga");
+				result = dao.setInsert(dto);
+				System.out.println("result : "+ result);
+				
+//				String name = "이성순";
+//				String ssn = "123456-1234567";
+//				String phone = "010-1111-1111";
+//				String address = "서울";
+				
 				// 낱개로 보내주는 방법
 //				int result = dao.setInsert(name, ssn, phone, address);
 				
@@ -34,22 +50,23 @@ public class _Exec {
 //				int result = dao.setInsert(strs);
 				
 				// Map으로 보내주는 방법
-				Map<String, String> map = new HashMap<>();
-				map.put("name", name);
-				map.put("ssn", ssn);
-				map.put("phone", phone);
-				map.put("address", address);
-				
-				StudentDAO dao = new StudentDAO();
-				int result = dao.setInsert(map);
-				System.out.println("result : "+ result);
+//				Map<String, String> map = new HashMap<>();
+//				map.put("name", name);
+//				map.put("ssn", ssn);
+//				map.put("phone", phone);
+//				map.put("address", address);
+//				int result = dao.setInsert(map);
 				
 				break;
 			case "4":
-				System.out.println("-수정-");
+				dto.inputField("sujung");
+				result = dao.setUpdate(dto);
+				System.out.println("result : "+result);
 				break;
 			case "5":
-				System.out.println("-삭제-");
+				dto.inputField("sakje");
+				result = dao.setDelete(dto);
+				System.out.println("result : "+result);
 				break;
 			default:
 				System.out.println("-프로그램 종료-");

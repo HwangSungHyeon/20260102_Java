@@ -14,21 +14,39 @@ public class StudentDTO {
 	
 	
 	public StudentDTO() {
-		inputField();
 	}
 	
 	// method
-	public void inputField() {
+	public void inputField(String gubun) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("이름 : ");
-		this.name = sc.nextLine();
-		System.out.print("주민번호 : ");
-		this.ssn = sc.nextLine();
-		System.out.print("전화번호 : ");
-		this.phone = sc.nextLine();
-		System.out.print("주소 : ");
-		this.address = sc.nextLine();
+		
+		if(gubun.equals("view") || gubun.equals("sujung") || gubun.equals("sakje")) {
+			System.out.println("학번 : ");
+			String hakbun_ = sc.nextLine();
+			this.hakbun = Integer.parseInt(hakbun_);
+		} 
+		
+		if (gubun.equals("chuga")) {
+			System.out.print("이름 : ");
+			this.name = sc.nextLine();
+			System.out.print("주민번호 : ");
+			this.ssn = sc.nextLine();
+			System.out.print("전화번호 : ");
+			this.phone = sc.nextLine();
+			System.out.print("주소 : ");
+			this.address = sc.nextLine();
+		} else if (gubun.equals("sujung")) {
+			System.out.print("전화번호 : ");
+			this.phone = sc.nextLine();
+			System.out.print("주소 : ");
+			this.address = sc.nextLine();
+		}
 	}
+	
+	public void display() {
+		System.out.printf("%d\t%s\t%s\t%s\t%s\t%s\n", hakbun, name, ssn, phone, address, createdDate);
+	}
+	
 	public int getHakbun() {
 		return hakbun;
 	}
