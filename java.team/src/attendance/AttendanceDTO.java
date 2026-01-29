@@ -1,8 +1,6 @@
 package attendance;
 
 import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class AttendanceDTO {
@@ -25,8 +23,7 @@ public class AttendanceDTO {
                 this.student_id = Integer.parseInt(sc.nextLine());
 
                 System.out.print("출결 날짜 입력 (yyyy-MM-dd) : ");
-                String dateStr = sc.nextLine();
-                this.attendance_date = parseDate(dateStr);
+                this.attendance_date = java.sql.Date.valueOf(sc.nextLine());
             }
 
             if(type.equals("update")) {
@@ -38,10 +35,8 @@ public class AttendanceDTO {
         }
 	}
 	
-	private Date parseDate(String dateStr) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date utilDate = sdf.parse(dateStr);
-        return new Date(utilDate.getTime());
+	private Date parseDate(String dateStr) {
+		return Date.valueOf(dateStr);
     }
 
 	private Date Date(String attendanceDate_) {
